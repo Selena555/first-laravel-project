@@ -23,8 +23,17 @@ class CategoryStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+<<<<<<< HEAD:app/Http/Requests/Category/CategoryStoreRequest.php
             'name' => 'required|string|min: 3|max:25',
             'poster'=>'required|image:jpg,jpeg,png|max:10240',
+=======
+            'name'          => 'required|string|min:3|max:25',
+            'description'   => 'string|min:3|max:25',
+            'content'       => 'required|string|min:10',
+            'poster'        => 'required|image:jpg,jpeg,png|max:10240',
+            'category_ids'  => 'array',
+            'category_ids.*'=> 'sometimes|integer',
+>>>>>>> origin/main:app/Http/Requests/PostStoreRequest.php
         ];
     }
 }
