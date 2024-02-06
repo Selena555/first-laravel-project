@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Http\Requests\Post\PostStoreRequest;
-=======
-use App\Http\Requests\PostStoreRequest;
->>>>>>> origin/main
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Contracts\View\Factory;
@@ -32,6 +28,7 @@ class PostController extends Controller
     public function create(): View|Application|Factory
     {
         $categories = Category::all();
+
         return view('posts.create', ['categories' => $categories]);
     }
 
@@ -42,7 +39,7 @@ class PostController extends Controller
     {
         $data = $request->validated();
 
-        $image     = $data['poster'];
+        $image = $data ['poster'];
         $imageName = Str::random(40) . '.' . $image->getClientOriginalExtension();
         $image->move(
             storage_path() . '/app/public/posts/posters',
@@ -51,16 +48,17 @@ class PostController extends Controller
 
         $post = new Post();
 
-        $post->name        = $data['name'];
+        $post->name = $data['name'];
         $post->description = $data['description'] ?? null;
-        $post->content     = $data['content'];
-        $post->poster      = $imageName;
+        $post->content = $data['content'];
+        $post->poster = $imageName;
 
         $post->save();
 
-        if  ($data['category_ids']) {
-        $post->categories()->attach($data['category_ids']);
-    }
+        if ($data['category_ids']) {
+            $post->categories()->attach($data['category_ids']);
+        }
+
         return $post;
     }
 
@@ -91,7 +89,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post): ?bool
+    public function destroy(Post $post)
     {
         return $post->delete();
     }

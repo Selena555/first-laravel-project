@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- *@property int $id
+ *@property int    $id
  *@property string $name
  *@property string $poster
  *@property string $created_at

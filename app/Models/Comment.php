@@ -24,10 +24,5 @@ class Comment extends Model
     {
         return $this->hasMany(Post::class);
     }
-
-//    public function posts(): BelongsHasMany
-//    {
-//        return $this->belongsHasMany(Post::class);
-//    }
 }
 

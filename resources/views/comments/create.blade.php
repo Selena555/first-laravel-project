@@ -1,13 +1,8 @@
-<form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('comments.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <label>
         Название
         <input type="text" name="name" placeholder="название поста" required>
-    </label>
-
-    <label>
-        Описание
-        <input type="text" name="description" placeholder="описание поста">
     </label>
 
     <label>
@@ -22,9 +17,9 @@
 
     <label>
         Категория
-        <select name="category_ids" id="category_ids" multiple>
-           @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+        <select name="comment_ids" id="comment_ids" multiple>
+            @foreach($comments as $comment)
+                <option value="{{ $comment->id }}">{{ $comment->name }}</option>
             @endforeach
         </select>
     </label>
