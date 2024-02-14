@@ -1,0 +1,85 @@
+.wrapper {
+    width: 100vw;
+    height: 46.3vw;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+.shape {
+    position: absolute;
+    top: 24vw;
+    left: 50vw;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.shape-title {
+    margin: 0 0 7vw;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.shape-field {
+    position: relative;
+}
+
+.shape-field input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 60px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.shape-field span {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    margin: 4px 0 0 0;
+    font-size: 20px;
+    color: #03e9f4;
+    pointer-events: none;
+    transition: 0.7s;
+}
+
+textarea {
+    height: 158px;
+    width: 311px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .7s;
+    margin-top: 40px;
+    margin-left: 5vw;
+    letter-spacing: 4px;
+    border: 2px solid #03e9f4;
+}
+
+.btn:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+

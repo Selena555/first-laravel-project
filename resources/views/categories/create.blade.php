@@ -4,21 +4,21 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style-category.css')}}">
 </head>
 <body>
-<div class="container">
-    <div class="login-box">
-        <h1 class="title">Создание категории</h1>
+<div class="wrapper">
+    <div class="shape">
+        <h1 class="shape-title">Создание категории</h1>
         <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="user-box">
+            <div class="shape-field">
                 <label>
                     <span>Название</span>
                     <input type="text" name="name" placeholder="Название поста" required/>
                 </label>
             </div>
-            <div class="user-box">
+            <div class="shape-field">
                 <label>
                     <span>Постер</span>
                     <input type="file" name="poster" id="poster" required/>
