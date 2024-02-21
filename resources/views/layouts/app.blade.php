@@ -14,10 +14,10 @@ http://www.tooplate.com/view/2085-neuron
 
 -->
 
-    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
+    {{--    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('resources/css/font-awesome.min.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('resources/css/magnific-popup.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">--}}
     <!-- Main css -->
     <link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
 </head>
@@ -87,19 +87,29 @@ http://www.tooplate.com/view/2085-neuron
     </div>
 </div>
 
-@vite(['resources/css/app.css']);
-@vite(['resources/css/bootstrap.min.css']);
-@vite(['resources/css/font-awesome.min.css']);
-@vite(['resources/css/magnific-popup.css']);
-<!-- SCRIPTS -->
-<script src="js/app.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.parallax.js"></script>
-<script src="js/particles.min.js"></script>
+@vite([
+    'resources/js/jquery.js',
+    'resources/css/app.css',
+    'resources/css/bootstrap.min.css',
+    'resources/css/font-awesome.min.css',
+    'resources/css/magnific-popup.css',
+    'resources/js/app.js',
+    'resources/js/custom.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/particles.min.js',
+    'resources/js/jquery.parallax.js',
+    'resources/js/smoothscroll.js',
 
+])
+
+<!-- SCRIPTS -->
+{{--<script src="js/app.js"></script>--}}
+{{--<script src="js/bootstrap.js"></script>--}}
+{{--<script src="js/custom.js"></script>--}}
+{{--<script src="js/smoothscroll.js"></script>--}}
+{{--<script src="js/jquery.js"></script>--}}
+{{--<script src="js/jquery.parallax.js"></script>--}}
+{{--<script src="js/particles.min.js"></script>--}}
 
 
 </body>

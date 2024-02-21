@@ -27,7 +27,8 @@
             <div class="form-string">
                 <label>
                     <span>Содержимое</span>
-                    <textarea style="max-width: 100%; min-width: 100%; width: 60vw; height: 158px; margin-bottom: 35px;" name="content" id="content"
+                    <textarea style="max-width: 100%; min-width: 100%; width: 60vw; height: 158px;
+                     margin-bottom: 35px;" name="content" id="content"
                               cols="30" rows="10" required></textarea>
                 </label>
             </div>

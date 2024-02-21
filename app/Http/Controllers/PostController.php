@@ -17,7 +17,7 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Collection
+    public function index(): Application|Factory|View
     {
         $posts= Post::with('categories')->get();
         return view('posts.index', compact('posts'));
