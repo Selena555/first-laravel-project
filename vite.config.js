@@ -5,7 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
+                'resources/css/style.css',
                 'resources/css/bootstrap.min.css',
                 'resources/css/font-awesome.min.css',
                 'resources/css/magnific-popup.css' ,

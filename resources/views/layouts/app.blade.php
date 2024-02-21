@@ -6,19 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ env('APP_NAME') }}</title>
+
     <!--
-
 Template 2085 Neuron
-
 http://www.tooplate.com/view/2085-neuron
-
 -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
 
-    {{--    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }}">--}}
-    {{--    <link rel="stylesheet" href="{{ asset('resources/css/font-awesome.min.css') }}">--}}
-    {{--    <link rel="stylesheet" href="{{ asset('resources/css/magnific-popup.css') }}">--}}
-    {{--    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">--}}
     <!-- Main css -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
 </head>
 <body>
@@ -87,30 +84,15 @@ http://www.tooplate.com/view/2085-neuron
     </div>
 </div>
 
-@vite([
-    'resources/js/jquery.js',
-    'resources/css/app.css',
-    'resources/css/bootstrap.min.css',
-    'resources/css/font-awesome.min.css',
-    'resources/css/magnific-popup.css',
-    'resources/js/app.js',
-    'resources/js/custom.js',
-    'resources/js/bootstrap.min.js',
-    'resources/js/particles.min.js',
-    'resources/js/jquery.parallax.js',
-    'resources/js/smoothscroll.js',
-
-])
-
 <!-- SCRIPTS -->
-{{--<script src="js/app.js"></script>--}}
-{{--<script src="js/bootstrap.js"></script>--}}
-{{--<script src="js/custom.js"></script>--}}
-{{--<script src="js/smoothscroll.js"></script>--}}
-{{--<script src="js/jquery.js"></script>--}}
-{{--<script src="js/jquery.parallax.js"></script>--}}
-{{--<script src="js/particles.min.js"></script>--}}
 
+<script src="{{ asset('assets/js/jquery.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/particles.min.js') }}"></script>
+<script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.parallax.js') }}"></script>
+<script src="{{ asset('assets/js/smoothscroll.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 </body>
 </html>
