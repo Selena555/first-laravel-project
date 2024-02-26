@@ -24,22 +24,22 @@
                 @foreach($posts as $post)
                         <div class="blog-post-thumb">
                             <div class="blog-post-image">
-                                <a href="{{ route('posts.show', [$post]) }}">
-                                    <img style="width: 50%; height: 30%" src="{{ asset('storage/' . '/posts/posters/' . $post["poster"]) }}"
+                                <a href="{{ route('posts.show', $post->id) }}">
+                                    <img style="width: 50%; height: 30%" src="{{ asset('storage/posts/posters/' . $post->poster) }}"
                                      class="img-responsive" alt="Blog Image">
                                 </a>
                             </div>
                             <div class="blog-post-title">
-                                <h3><a href="{{ route('posts.show', [$post]) }}">{{ $post->name }}</a></h3>
+                                <h3><a href="{{ route('posts.show', $post->id) }}">{{ $post->name }}</a></h3>
                             </div>
                             <div class="blog-post-format">
                                 <span><a href="#"><img src="{{ asset('assets/images/author-image1.jpg') }}" class="img-responsive img-circle"> Jen Lopez</a></span>
                                 <span><i class="fa fa-date"></i>{{ $post->created_at }}</span>
-                                <span><a href="#"><i class="fa fa-comment-o"></i> 35 Comments</a></span>
+                                <span><i class="fa fa-comment-o"></i> 35 Comments</span>
                             </div>
                             <div class="blog-post-des">
-                                <p>{{ $post->content }}</p>
-                                <a href="{{ route('posts.show', [$post]) }}" class="btn btn-default">Continue Reading</a>
+                                <p>{{ $post->description }}</p>
+                                <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default">Читать далее</a>
                             </div>
                         </div>
                 @endforeach
