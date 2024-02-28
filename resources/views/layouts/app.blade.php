@@ -40,7 +40,6 @@ http://www.tooplate.com/view/2085-neuron
         </div>
 
         @yield('content')
-        @yield('content2')
 
         <footer>
             <div class="container">

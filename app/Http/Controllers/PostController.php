@@ -30,7 +30,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
 
-        return view('posts.create', ['categories' => $categories, 'test' => 123]);
+        return view('posts.create', ['categories' => $categories]);
     }
 
     /**
@@ -66,9 +66,9 @@ $post->load('categories');
     /**
      * Display the specified resource.
      */
-    public function show(Post $post): \Illuminate\Contracts\Foundation\Application|Factory|View|Application
+    public function show(Post $post): View|Application|Factory
     {
-        return view('layouts.app', $post);
+        return view('posts.show', compact('post'));
     }
 
     /**
