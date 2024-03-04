@@ -53,42 +53,49 @@
                             </div>
                         </div>
 
-                        @if($post->comments->isEmpty())
-                        <div class="blog-comment" id ="comments">
+                        @if(!$post->comments->isEmpty())
+                            <div class="blog-comment" id="comments">
                                 <h3>Комментарии</h3>
                                 @foreach($post->comments as $comment)
                                     <div class="media">
-                                        <div class="media-object pull-left">
-                                            <img src="{{asset('assets/images/comment-image1.jpg')}}"
-                                                 class="img-responsive img-circle"
-                                                 alt="Blog Image 11">
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">{{$comment->user->name}}</h3>
-                                            @if($comment->created_at->diffInDays() <= 3)
-                                            <span>{{$comment->created_at->diffForHumans() }}</span>
-                                            @else
-                                                <span>{{$comment->created_at->translateFormat('j F Y') }}</span>
-                                            @endif
-                                            <p>{{$comment->content}}</p>
-                                        </div>
+                                        <form action="{{ url('/deleteComment/'.$comment->id) }}" method="post">
+                                            {{ csrf_field() }}
+                                            <div class="media-object pull-left">
+                                                <img src="{{asset('assets/images/comment-image1.jpg')}}"
+                                                     class="img-responsive img-circle"
+                                                     alt="Blog Image 11">
+                                            </div>
+                                            <div class="media-body">
+                                                <h3 class="media-heading">{{$comment->user->name}}</h3>
+                                                @if($comment->created_at->diffInDays() <= 3)
+                                                    <span>{{$comment->created_at->diffForHumans() }}</span>
+                                                @else
+                                                    <span>{{$comment->created_at->translateFormat('j F Y') }}</span>
+                                                @endif
+                                                <p>{{$comment->content}}</p>
+                                            </div>
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-sm btn-danger"><i
+                                                    class="fa fa-trash-o"></i></button>
+                                        </form>
                                     </div>
                                 @endforeach
-                            @endif
-                        </div>
+                            </div>
+                        @endif
                     </div>
 
 
                     <div class="blog-comment-form">
-                        <h3>Leave a Comment</h3>
-                        <form action="#" method="post">
+                        <h3>Оставить комментарий</h3>
+                        <form action="{{ route('comments.store') }}" method="post">
+                            @csrf
                             <input type="text" class="form-control" placeholder="Name" name="name" required>
                             <input type="email" class="form-control" placeholder="Email" name="email" required>
                             <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"
                                       message="message" required="required"></textarea>
                             <div class="col-md-3 col-sm-4">
                                 <input name="submit" type="submit" class="form-control" id="submit"
-                                       value="Post Your Comment">
+                                       value="Отправить комментарий">
                             </div>
                         </form>
                     </div>

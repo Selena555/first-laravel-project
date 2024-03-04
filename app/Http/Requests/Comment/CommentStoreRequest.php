@@ -28,6 +28,7 @@ class CommentStoreRequest extends FormRequest
             'poster' => 'required|image:jpg,jpeg,png|max:10240',
             'comment_ids' => 'array',
             'comment_ids.*' => 'sometimes|integer',
+            'email' => 'required|string|min:3'
         ];
     }
 }

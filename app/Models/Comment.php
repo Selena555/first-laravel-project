@@ -15,11 +15,24 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int    $post_id
  * @property string $created_at
  * @property string $updated_at
+ * @property string $name
+ * @property string $email
  */
 
 class Comment extends Model
 {
     use HasFactory;
+
+
+//    public static function where(string $string, $id): BelongsTo
+//    {
+//        return $this->belongsTo(User::class);
+//    }
+
+//    public static function find($id): BelongsTo
+//    {
+//        return $this->belongsTo(User::class);
+//    }
 
     public function user(): BelongsTo
     {

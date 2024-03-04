@@ -21,7 +21,6 @@ class Post extends Model
 {
     use HasFactory;
 
-
     public function categories():BelongsToMany
     {
         return $this->belongsToMany(Category::class);

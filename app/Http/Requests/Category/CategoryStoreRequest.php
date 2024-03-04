@@ -29,7 +29,7 @@ class CategoryStoreRequest extends FormRequest
             'poster'        => 'required|image:jpg,jpeg,png|max:10240',
             'category_ids'  => 'array',
             'category_ids.*'=> 'sometimes|integer',
-
+            'email' => 'required|string|min:3'
         ];
     }
 }
