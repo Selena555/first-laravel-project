@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
     <!-- Home Section -->
-
     <section id="home" class="main-single-post parallax-section">
         <div class="overlay"></div>
         <div class="container">
@@ -15,9 +13,7 @@
             </div>
         </div>
     </section>
-
     <!-- Blog Single Post Section -->
-
     <section id="blog-single-post">
         <div class="container">
             <div class="row">
@@ -52,43 +48,45 @@
                                 </div>
                             </div>
                         </div>
-
                         @if(!$post->comments->isEmpty())
                             <div class="blog-comment" id="comments">
                                 <h3>Комментарии</h3>
                                 @foreach($post->comments as $comment)
                                     <div class="media">
-                                        <form action="{{ url('/deleteComment/'.$comment->id) }}" method="post">
-                                            {{ csrf_field() }}
-                                            <div class="media-object pull-left">
-                                                <img src="{{asset('assets/images/comment-image1.jpg')}}"
-                                                     class="img-responsive img-circle"
-                                                     alt="Blog Image 11">
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="media-heading">{{$comment->user->name}}</h3>
-                                                @if($comment->created_at->diffInDays() <= 3)
-                                                    <span>{{$comment->created_at->diffForHumans() }}</span>
-                                                @else
-                                                    <span>{{$comment->created_at->translateFormat('j F Y') }}</span>
-                                                @endif
-                                                <p>{{$comment->content}}</p>
-                                            </div>
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="btn btn-sm btn-danger"><i
-                                                    class="fa fa-trash-o"></i></button>
-                                        </form>
+                                        <div class="media-object pull-left">
+                                            <img src="{{asset('assets/images/comment-image1.jpg')}}"
+                                                 class="img-responsive img-circle"
+                                                 alt="Blog Image 11">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="media-heading">{{$comment->user->name}}</h3>
+                                            @if($comment->created_at->diffInDays() <= 3)
+                                                <span>{{$comment->created_at->diffForHumans() }}</span>
+                                            @else
+                                                <span>{{$comment->created_at->translateFormat('j F Y') }}</span>
+                                            @endif
+                                            <p>{{$comment->content}}</p>
+
+                                            <form
+                                                action="{{ route('comments.destroy', $comment->id) }}"
+                                                method="post"
+                                                onsubmit="return confirm('Вы уверены?');"
+                                            >
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"><i class="fa fa-trash-o"></i>Удалить</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
                         @endif
                     </div>
-
-
                     <div class="blog-comment-form">
                         <h3>Оставить комментарий</h3>
                         <form action="{{ route('comments.store') }}" method="post">
                             @csrf
+                            <input type="hidden" name="post_id" value="{{ $post->id }}">
                             <input type="text" class="form-control" placeholder="Name" name="name" required>
                             <input type="email" class="form-control" placeholder="Email" name="email" required>
                             <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"
